@@ -2,19 +2,25 @@ package com.jeffsenaa.apispring.resources;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jeffsenaa.apispring.domain.User;
+import com.jeffsenaa.apispring.services.UserService;
 
 @RestController
 @RequestMapping(value="/uses")
 public class UserResources {
+	
+	@Autowired
+	private UserService service;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public List<User> findAll(){
-		throw new UnsupportedOperationException("Ainda não implementado");
-		//TODO:implementar
+	public ResponseEntity<List<User>> findAll(){
+		List<User> list = service.findAll();
+		return ResponseEntity.ok().body(list);
 	}
-}
+}	
