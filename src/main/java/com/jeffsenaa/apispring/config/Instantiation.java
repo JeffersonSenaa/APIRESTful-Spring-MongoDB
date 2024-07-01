@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 
 import com.jeffsenaa.apispring.domain.Post;
 import com.jeffsenaa.apispring.domain.User;
+import com.jeffsenaa.apispring.dto.AuthorDTO;
 import com.jeffsenaa.apispring.repository.PostRepository;
 import com.jeffsenaa.apispring.repository.UserRepository;
 
@@ -33,10 +34,13 @@ public class Instantiation implements CommandLineRunner{
 		User alex = new User(null, "Alex Green", "alex@gmail.com");
 		User bob = new User(null, "Bob Grey", "bob@gmail.com");
 		
-		Post post1 = new Post(null, sdf.parse("23/07/2019"), "Estudando MongoDB", "Criando projeto com Spring e NoSql", bob);
+		Post post1 = new Post(null, sdf.parse("23/07/2019"), "Estudando MongoDB", "Criando projeto com Spring e NoSql", new AuthorDTO(bob));
 		
 		userRepository.saveAll(Arrays.asList(maria, alex, bob));
 		postRepository.save(post1);
+		
+		maria.getPosts().add(post1);
+		userRepository.save(maria);
 		
 	}
 
