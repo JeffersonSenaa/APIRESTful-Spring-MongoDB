@@ -1,6 +1,8 @@
 # Projeto de API REST com Spring Boot e MongoDB
 
-Este projeto é uma implementação de uma API RESTful utilizando Spring Boot, MongoDB e JPA/Hibernate. O objetivo deste projeto é compreender as principais diferenças entre o paradigma orientado a documentos e o paradigma relacional, implementar operações CRUD, refletir sobre decisões de design para um banco de dados orientado a documentos e realizar consultas com Spring Data e MongoRepository.
+Este projeto é uma implementação de posts de usuários em redes sociais onde é possível fazer comentários nos posts. Com isso, o projeto implementa associações para relacionar os usuários que comentam e postam.   
+
+Dessa forma, o projeto trata-se da implementação de uma API RESTful utilizando Spring Boot, MongoDB e JPA/Hibernate. O objetivo deste projeto é compreender as principais diferenças entre o paradigma orientado a documentos e o paradigma relacional, implementar operações CRUD, refletir sobre decisões de design para um banco de dados orientado a documentos e realizar consultas com Spring Data e MongoRepository.
 
 ## Objetivo Geral
 
